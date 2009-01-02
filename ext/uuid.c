@@ -12,6 +12,17 @@ static VALUE uuid2ary(uuid_t uuid)
   return ary;
 }
 
+static VALUE UUID_generate_string(VALUE self)
+{
+  uuid_t uuid;
+  char out[17];
+  
+  uuid_generate(uuid);
+  uuid_unparse(uuid, out);
+  
+  return rb_str_new(out, 17);
+}
+
 static VALUE UUID_generate(VALUE self)
 {
   uuid_t out;
@@ -47,4 +58,5 @@ void Init_uuid_ext()
   rb_define_singleton_method(rb_cUUID, "generate", UUID_generate, 0);
   rb_define_singleton_method(rb_cUUID, "generate_time", UUID_generate_time, 0);
   rb_define_singleton_method(rb_cUUID, "generate_random", UUID_generate_random, 0);
+  rb_define_singleton_method(rb_cUUID, "generate_string", UUID_generate_string, 0);
 }
