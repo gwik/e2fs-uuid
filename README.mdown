@@ -1,6 +1,6 @@
 # UUID
 
-Ruby C extension provide access to the uuid library from [e2fs project](http://e2fs.sourceforge.net) available in most unix
+Ruby C extension provide access to the uuid library from [e2fs project](http://e2fsprogs.sourceforge.net/) available in most unix
 systems.
 
 ## DESCRIPTION
