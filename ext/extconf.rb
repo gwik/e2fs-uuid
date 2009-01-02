@@ -1,10 +1,5 @@
 require 'mkmf'
 
-if find_header('uuid/uuid.h')
-  create_makefile('UUID')
-else
-
-  STDERR.puts 'missing uuid'
-  exit(1)
-
-end
+have_header('uuid/uuid.h') or fail('missing uuid/uuid.h header')
+have_type('uuid_t', 'uuid/uuid.h') or fail('missing type uuid_t')
+create_makefile('UUID')
