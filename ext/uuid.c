@@ -1,7 +1,7 @@
 #include <uuid/uuid.h>
 #include "ruby.h"
 
-static uuid2ary(uuid_t uuid)
+static VALUE uuid2ary(uuid_t uuid)
 {
   int i;
   volatile VALUE ary = rb_ary_new();
@@ -10,20 +10,6 @@ static uuid2ary(uuid_t uuid)
     rb_ary_push(ary, INT2FIX(uuid[i]));
   
   return ary;
-}
-
-static uuid2str(uuid_t uuid)
-{
-  char * out = malloc(sizeof(char) * 37);
-  uuid_unparse(uuid, out);
-  return rb_str_new2(out);
-}
-
-static VALUE uuid_to_rb(uuid_t uuid, VALUE raw)
-{
-  if (RTEST(raw))
-    return uuid2ary(uuid);
-  return uuid2str(uuid);
 }
 
 static VALUE UUID_generate(VALUE self)
