@@ -14,7 +14,6 @@ static VALUE uuid2ary(uuid_t uuid)
 
 static VALUE UUID_generate(VALUE self)
 {
-  int i;
   uuid_t out;
   
   uuid_generate(out);
@@ -24,7 +23,6 @@ static VALUE UUID_generate(VALUE self)
 
 static VALUE UUID_generate_time(VALUE self)
 {
-  int i;
   uuid_t out;
   
   uuid_generate_time(out);
@@ -34,7 +32,6 @@ static VALUE UUID_generate_time(VALUE self)
 
 static VALUE UUID_generate_random(VALUE self)
 {
-  int i;
   uuid_t out;
   
   uuid_generate_random(out);
