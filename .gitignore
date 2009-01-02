@@ -3,3 +3,4 @@
 *.bundle
 *.so
 ext/Makefile
+ext/mkmf.log
