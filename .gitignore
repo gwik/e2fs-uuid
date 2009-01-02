@@ -1,0 +1,5 @@
+*.gem
+*.o
+*.bundle
+*.so
+ext/Makefile
