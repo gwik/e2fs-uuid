@@ -13,8 +13,8 @@ module E2FS
       @ary = self.class.generate.freeze
     end
     
-    def to_s(format_string=:default)
-      format(FORMATS[format_string], *@ary)
+    def to_s(format_string=:default, prefix=nil)
+      format(prefix.to_s + FORMATS[format_string], *@ary)
     end
     
     def to_a
