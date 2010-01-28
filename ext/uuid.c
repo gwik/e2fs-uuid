@@ -15,12 +15,12 @@ static VALUE uuid2ary(uuid_t uuid)
 static VALUE UUID_generate_string(VALUE self)
 {
   uuid_t uuid;
-  char out[17];
-  
+  char out[37];
+
   uuid_generate(uuid);
   uuid_unparse(uuid, out);
-  
-  return rb_str_new(out, 17);
+
+  return rb_str_new(out, 36);
 }
 
 static VALUE UUID_generate(VALUE self)
